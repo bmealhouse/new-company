@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+
+.hero-background {
+  /* background: theme("colors.red.100");
+  background: linear-gradient(
+    to top,
+    theme("colors.red.100") 0%,
+    theme("colors.orange.200") 16%,
+    theme("colors.indigo.900") 30%,
+    theme("colors.blue.900") 100%
+  ); */
+}
+
+.diagonal-section-wrapper {
+  --offset: -50px;
+  --height: 50px;
+  --diagonal-fg: theme("colors.gray.800");
+  --diagonal-bg: theme("colors.gray.900");
+  @apply relative w-screen max-w-full overflow-hidden;
+  /* margin-top: var(--offset); */
+}
+
+.diagonal-section-wrapper--alternate {
+  --diagonal-bg: theme("colors.green.900");
+}
+
+.diagonal-section-wrapper__top {
+  @apply w-0 h-0 border-solid;
+  border-width: var(--height) 100vw 0 0;
+  border-color: transparent var(--diagonal-bg) transparent transparent;
+}
+
+.diagonal-section-wrapper__content {
+  color: var(--diagonal-fg);
+  background: var(--diagonal-bg);
+}
+
+.diagonal-section-wrapper__bottom {
+  @apply w-0 h-0 border-solid;
+  border-width: var(--height) 100vw 0 0;
+  border-color: var(--diagonal-bg) transparent transparent transparent;
+}
+
+@tailwind utilities;
